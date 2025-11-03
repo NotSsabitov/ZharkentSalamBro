@@ -476,16 +476,23 @@
       color:inherit;
     }
 
-/* === MOBILE FRIENDLY ENHANCEMENTS (улучшенная адаптация) === */
+/* === НОВЫЙ МОБИЛЬНЫЙ СТИЛЬ (идеально по центру и аккуратно) === */
 @media (max-width: 600px) {
-  .container {
-    padding: 0 14px;
+  body {
+    overflow-x: hidden;
   }
 
+  .container {
+    padding: 0 18px;
+  }
+
+  /* Шапка */
   .nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
   }
 
   .nav-links {
@@ -493,102 +500,128 @@
   }
 
   .logo {
-    font-size: 18px;
+    font-size: 22px;
   }
 
+  .nav div[style*="display:flex"] {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center !important;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Блок hero */
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 60px 0 80px;
-    gap: 24px;
-  }
-
-  .hero-left h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
-  .tagline {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .hero-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    padding: 70px 0 100px;
+    gap: 26px;
     align-items: center;
   }
 
+  .hero-left {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+
+  /* Кнопки в hero */
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+  }
+
   .hero-cta .btn {
-    width: 90%;
+    width: 85%;
+    max-width: 340px;
     font-size: 16px;
     padding: 14px 0;
     border-radius: 14px;
   }
 
-  .btn {
-    padding: 10px 18px;
-    font-size: 15px;
-    border-radius: 12px;
+  .hero p.muted {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
   }
 
+  .hero-right {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .hero-right div {
+    text-align: left;
+  }
+
+  /* Категории меню */
   .menu-categories {
-    gap: 8px;
-    margin-bottom: 24px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
   }
 
   .category-btn {
-    padding: 8px 14px;
+    padding: 9px 16px;
     font-size: 14px;
-    border-radius: 16px;
+    border-radius: 18px;
   }
 
+  /* Карточки */
   .menu-grid {
     justify-content: center;
-    gap: 16px;
+    gap: 18px;
   }
 
   .menu-card {
     width: 100%;
-    max-width: 340px;
-    border-radius: 16px;
+    max-width: 360px;
   }
 
   .menu-card .img-wrap {
     height: 200px;
   }
 
-  .modal {
-    width: 100%;
-    max-width: 360px;
-    padding: 18px;
-    border-radius: 14px;
-  }
-
+  /* Кнопка корзины */
   .cart-btn {
-    right: 16px;
-    bottom: 16px;
+    right: 20px;
+    bottom: 20px;
     padding: 12px 18px;
+    border-radius: 999px;
   }
 
-  .cart-panel {
-    right: 10px;
-    bottom: 80px;
-    width: calc(100% - 20px);
-    max-width: 420px;
-    padding: 12px;
-    border-radius: 12px;
+  /* Модальные окна */
+  .modal {
+    max-width: 90%;
+    padding: 20px;
   }
 
+  /* Секции */
   .section {
     padding: 60px 0;
   }
 
   .section-title {
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
   }
 
@@ -597,46 +630,51 @@
     font-size: 15px;
   }
 
-  .reviews-grid {
+  /* Контакты */
+  .contact-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
+  /* Отзывы */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Футер */
   .footer-grid {
     flex-direction: column;
-    gap: 12px;
     text-align: center;
+    gap: 10px;
   }
 }
 
 @media (max-width: 420px) {
   .hero-left h1 {
-    font-size: 26px;
+    font-size: 30px;
   }
 
   .hero-cta .btn {
-    width: 100%;
+    width: 90%;
     font-size: 15px;
+  }
+
+  .category-btn {
+    font-size: 13px;
+    padding: 8px 12px;
   }
 
   .menu-card .img-wrap {
     height: 180px;
   }
 
-  .btn {
-    font-size: 14px;
-    padding: 10px 14px;
-  }
-
-  .category-btn {
-    font-size: 13px;
-    padding: 7px 12px;
-  }
-
   .avatar {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
   }
 }
+
 
 
     /* Дополнительно — мелкая оптимизация модальных окон */
