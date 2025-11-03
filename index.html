@@ -476,204 +476,168 @@
       color:inherit;
     }
 
-    /* mobile adjustments (replaced & improved) */
-    /* === MOBILE FRIENDLY ENHANCEMENTS === */
-    @media (max-width: 600px) {
-      /* контейнер и структура */
-      .container {
-        padding: 0 14px;
-      }
+/* === MOBILE FRIENDLY ENHANCEMENTS (улучшенная адаптация) === */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 14px;
+  }
 
-      /* навигация */
-      .nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
-      }
+  .nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
 
-      .nav-links {
-        display: none;
-      }
+  .nav-links {
+    display: none;
+  }
 
-      .logo {
-        font-size: 18px;
-      }
+  .logo {
+    font-size: 18px;
+  }
 
-      /* хедер и герой */
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 0;
-        gap: 30px;
-      }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0 80px;
+    gap: 24px;
+  }
 
-      .hero-left h1 {
-        font-size: 32px;
-      }
+  .hero-left h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 
-      .tagline {
-        font-size: 16px;
-      }
+  .tagline {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 
-      .hero-right {
-        max-width: 100%;
-      }
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
 
-      /* кнопки */
-      .btn {
-        padding: 10px 18px;
-        font-size: 15px;
-        border-radius: 12px;
-        width: auto;
-      }
+  .hero-cta .btn {
+    width: 90%;
+    font-size: 16px;
+    padding: 14px 0;
+    border-radius: 14px;
+  }
 
-      .btn.small {
-        padding: 8px 12px;
-        font-size: 14px;
-      }
+  .btn {
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
 
-      /* категории */
-      .menu-categories {
-        gap: 8px;
-        margin-bottom: 24px;
-      }
+  .menu-categories {
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
 
-      .category-btn {
-        padding: 8px 14px;
-        font-size: 14px;
-        border-radius: 16px;
-      }
+  .category-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
 
-      /* карточки меню */
-      .menu-grid {
-        justify-content: center;
-        gap: 16px;
-      }
+  .menu-grid {
+    justify-content: center;
+    gap: 16px;
+  }
 
-      .menu-card {
-        width: 100%;
-        max-width: 340px;
-        border-radius: 16px;
-      }
+  .menu-card {
+    width: 100%;
+    max-width: 340px;
+    border-radius: 16px;
+  }
 
-      .menu-card .img-wrap {
-        height: 200px;
-      }
+  .menu-card .img-wrap {
+    height: 200px;
+  }
 
-      .menu-card h3 {
-        font-size: 16px;
-      }
+  .modal {
+    width: 100%;
+    max-width: 360px;
+    padding: 18px;
+    border-radius: 14px;
+  }
 
-      .menu-card p.desc {
-        font-size: 13px;
-      }
+  .cart-btn {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+  }
 
-      /* всплывающие окна */
-      .modal {
-        width: 100%;
-        max-width: 360px;
-        padding: 18px;
-        border-radius: 14px;
-      }
+  .cart-panel {
+    right: 10px;
+    bottom: 80px;
+    width: calc(100% - 20px);
+    max-width: 420px;
+    padding: 12px;
+    border-radius: 12px;
+  }
 
-      .modal h3 {
-        font-size: 18px;
-        text-align: center;
-      }
+  .section {
+    padding: 60px 0;
+  }
 
-      .modal .btn {
-        font-size: 14px;
-      }
+  .section-title {
+    font-size: 22px;
+    text-align: center;
+  }
 
-      /* корзина */
-      .cart-panel {
-        right: 10px;
-        bottom: 70px;
-        width: calc(100% - 20px);
-        max-width: 420px;
-        padding: 12px;
-        border-radius: 12px;
-      }
+  .section-sub {
+    text-align: center;
+    font-size: 15px;
+  }
 
-      .cart-btn {
-        right: 20px;
-        bottom: 18px;
-        padding: 10px 16px;
-      }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
 
-      /* контактная форма */
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
+  .footer-grid {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
 
-      .contact-info,
-      .order-form {
-        padding: 20px;
-      }
+@media (max-width: 420px) {
+  .hero-left h1 {
+    font-size: 26px;
+  }
 
-      /* секции и заголовки */
-      .section {
-        padding: 60px 0;
-      }
+  .hero-cta .btn {
+    width: 100%;
+    font-size: 15px;
+  }
 
-      .section-title {
-        font-size: 22px;
-        text-align: center;
-      }
+  .menu-card .img-wrap {
+    height: 180px;
+  }
 
-      .section-sub {
-        text-align: center;
-        font-size: 15px;
-      }
+  .btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
 
-      /* отзывы */
-      .reviews-grid {
-        grid-template-columns: 1fr;
-      }
+  .category-btn {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
 
-      .review-card {
-        padding: 16px;
-      }
+  .avatar {
+    width: 42px;
+    height: 42px;
+  }
+}
 
-      /* футер */
-      .footer-grid {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-      }
-    }
-
-    /* Более тонкая настройка для очень узких экранов */
-    @media (max-width: 420px) {
-      .menu-card .img-wrap {
-        height: 180px;
-      }
-
-      .menu-card {
-        width: 100%;
-        max-width: 320px;
-      }
-
-      .hero-left h1 {
-        font-size: 26px;
-      }
-
-      .avatar {
-        width: 44px;
-        height: 44px;
-      }
-
-      .btn {
-        padding: 10px 14px;
-        font-size: 14px;
-      }
-
-      .category-btn {
-        padding: 7px 12px;
-        font-size: 13px;
-      }
-    }
 
     /* Дополнительно — мелкая оптимизация модальных окон */
     .modal-backdrop.open {
@@ -1023,8 +987,8 @@
       { id: 44, name: "Комбо для двоих №1", description: "1 куриный + 1 говяжий бургер", price: 4750, priceDisplay: "4750 ₸", category: "combos", image: "images/kombo/kombodlyadvoih.png" },
       { id: 45, name: "Комбо для двоих №2", description: "Оба говяжие", price: 4850, priceDisplay: "4850 ₸", category: "combos", image: "images/kombo/kombodlyadvoih2.png" },
       { id: 46, name: "Комбо для двоих №3", description: "Оба куриные", price: 4750, priceDisplay: "4750 ₸", category: "combos", image: "images/kombo/kddd.png" },
-      { id: 47, name: "Комбо для одного куриный", description: "", price: 2500, priceDisplay: "2500 ₸", category: "combos", image: "images/kombo/knok.png" },
-      { id: 48, name: "Комбо для одного говяжий", description: "", price: 2600, priceDisplay: "2600 ₸", category: "combos", image: "images/kombo/knog.png" },
+      { id: 47, name: "Комбо для одного куриный", description: "", price: 2500, priceDisplay: "2500 ₸", category: "combos", image: "images/kombo/chizburgerkuriny.png" },
+      { id: 48, name: "Комбо для одного говяжий", description: "", price: 2600, priceDisplay: "2600 ₸", category: "combos", image: "images/kombo/chizburgergovyazhiy.png" },
       { id: 49, name: "Комбо хот-дог", description: "Выберите вариант: острый / не острый", price: 2350, priceDisplay: "2350 ₸", category: "combos", image: "images/kombo/hotdogk.png", hasOptions: true, options:[
         { name: "Острый", price: 2350 },
         { name: "Не острый", price: 2350 }
@@ -1033,8 +997,8 @@
       { id: 51, name: "Нано комбо говяжий", description: "Мини комбо с говяжьим бургером", price: 2790, priceDisplay: "2790 ₸", category: "combos", image: "images/kombo/nanokombo1.png" },
 
       // старые/прочие комбо (если нужно)
-      { id: 37, name: "Комбо Чизбургер куриный", description: "Чизбургер + картофель + напиток", price: 2500, priceDisplay: "2500 ₸", category: "combos", image: "images/kombo/chizburgerkuriny.png" },
-      { id: 36, name: "Комбо Чизбургер говяжий", description: "Чизбургер + картофель + напиток", price: 2600, priceDisplay: "2600 ₸", category: "combos", image: "images/kombo/chizburgergovyazhiy.png" },
+      { id: 37, name: "Комбо Чизбургер куриный", description: "Чизбургер + картофель + напиток", price: 2500, priceDisplay: "2500 ₸", category: "combos", image: "images/kombo/kchiz (1).png" },
+      { id: 36, name: "Комбо Чизбургер говяжий", description: "Чизбургер + картофель + напиток", price: 2600, priceDisplay: "2600 ₸", category: "combos", image: "images/kombo/kchiz (2).png" },
       { id: 38, name: "Детское комбо", description: "Идеально для детей", price: 2100, priceDisplay: "2100 ₸", category: "combos", image: "images/kombo/kombodetskoye.jpg" }
     ];
 
