@@ -476,187 +476,173 @@
       color:inherit;
     }
 
-/* === МОБИЛЬНАЯ ВЕРСИЯ (центр со сдвигом влево, аккуратные кнопки) === */
+/* === МОБИЛЬНАЯ ВЕРСИЯ — почти как на ПК, но масштабируется === */
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
   }
 
   .container {
-    padding: 0 18px;
+    padding: 0 14px;
+    max-width: 100%;
   }
 
-  /* Шапка */
+  /* Шапка и навигация */
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 12px;
-    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
   }
 
   .logo {
-    font-size: 22px;
-    margin-left: 4px;
+    font-size: 20px;
   }
 
   .nav-links {
     display: none;
   }
 
-  .nav div[style*="display:flex"] {
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
 
-  /* Блок hero */
+  /* Hero-блок */
   .hero {
-    flex-direction: column;
-    text-align: left;
-    padding: 70px 0 90px;
-    gap: 22px;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 0 90px;
   }
 
   .hero-left {
-    max-width: 90%;
-    margin: 0 auto;
+    flex: 1 1 300px;
+    text-align: left;
   }
 
   .hero-left h1 {
-    font-size: 34px;
-    text-align: left;
+    font-size: 42px;
     margin-bottom: 10px;
   }
 
   .tagline {
-    font-size: 16px;
-    line-height: 1.45;
+    font-size: 17px;
+    line-height: 1.5;
     margin-bottom: 20px;
-    text-align: left;
   }
 
-  /* Кнопки */
   .hero-cta {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
     gap: 12px;
-    width: 100%;
+    flex-wrap: wrap;
   }
 
   .hero-cta .btn {
-    width: 75%;
-    max-width: 280px;
-    text-align: center;
+    flex: 1 1 160px;
     font-size: 15px;
-    padding: 13px 0;
-    border-radius: 14px;
+    padding: 12px 0;
+    text-align: center;
   }
 
-  .hero p.muted {
-    text-align: left;
-    margin-top: 18px;
-    font-size: 13px;
-  }
-
-  /* Правая часть hero */
+  /* Правая часть */
   .hero-right {
-    width: 90%;
-    margin: 0 auto;
+    flex: 1 1 240px;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-right div {
-    text-align: left;
+    max-width: 320px;
   }
 
-  /* Категории */
+  /* Категории и карточки */
   .menu-categories {
-    justify-content: flex-start;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 30px;
-    padding-left: 10px;
+    flex-wrap: wrap;
   }
 
   .category-btn {
-    padding: 8px 14px;
+    padding: 9px 16px;
     font-size: 14px;
-    border-radius: 16px;
   }
 
-  /* Карточки меню */
   .menu-grid {
     justify-content: center;
-    gap: 16px;
   }
 
   .menu-card {
-    width: 100%;
-    max-width: 340px;
-  }
-
-  .menu-card .img-wrap {
-    height: 200px;
-  }
-
-  /* Корзина */
-  .cart-btn {
-    right: 20px;
-    bottom: 20px;
-    padding: 12px 18px;
-  }
-
-  /* Контакты и отзывы */
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  /* Футер */
-  .footer-grid {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-left h1 {
-    font-size: 28px;
-  }
-
-  .hero-cta .btn {
-    width: 80%;
-    font-size: 14px;
+    width: 45%;
+    min-width: 160px;
+    max-width: 280px;
   }
 
   .menu-card .img-wrap {
     height: 180px;
   }
 
+  /* Контакты, отзывы, футер */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  /* Корзина */
+  .cart-btn {
+    right: 18px;
+    bottom: 18px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-left h1 {
+    font-size: 34px;
+  }
+
+  .tagline {
+    font-size: 15px;
+  }
+
+  .menu-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-cta .btn {
+    font-size: 14px;
+    width: 100%;
+  }
+
   .category-btn {
     font-size: 13px;
-    padding: 7px 12px;
+    padding: 8px 12px;
   }
 
   .avatar {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-right div {
+    text-align: center;
   }
 }
+
 
 
 
@@ -955,7 +941,7 @@
       // Хот-доги (с опцией остроты, где нужно)
       { id: 10, name: "BigBro Хот-дог говяжий", description: "Сытный хот-дог с говядиной", price: 1350, priceDisplay: "1350 ₸", category: "hotdogs", image: "images/hotdog/bigbrog.jpg" },
       { id: 11, name: "BigBro Хот-дог куриный Lite", description: "Легкий куриный хот-дог", price: 1350, priceDisplay: "1350 ₸", category: "hotdogs", image: "images/hotdog/bigbrokl.jpg" },
-      { id: 12, name: "BigBro Хот-дог куриный", description: "Выберите вариант", price: 1350, priceDisplay: "1350 ₸", category: "hotdogs", image: "images/hotdog/bigbrok.png", hasOptions: true, options: [
+      { id: 12, name: "BigBro Хот-дог куриный", description: "Выберите вариант", price: 1350, priceDisplay: "1350 ₸", category: "hotdogs", image: "images/hotdog/bigbrok.jpg", hasOptions: true, options: [
         { name: "Острый", price: 1350 },
         { name: "Не острый", price: 1350 }
       ]},
@@ -974,7 +960,7 @@
         { name: "5 шт", price: 1490 },
         { name: "7 шт", price: 1790 }
       ]},
-      { id: 16, name: "Нагетсы", description: "Выберите количество", price: 1240, priceDisplay: "1240 ₸", category: "snacks", image: "images/zakuski/ngetsi.png", hasOptions: true, options: [
+      { id: 16, name: "Нагетсы", description: "Выберите количество", price: 1240, priceDisplay: "1240 ₸", category: "snacks", image: "images/zakuski/nagetsi.png", hasOptions: true, options: [
         { name: "6 шт", price: 1240 },
         { name: "9 шт", price: 1690 },
         { name: "20 шт", price: 2990 }
@@ -1008,8 +994,7 @@
       { id: 44, name: "Комбо для двоих №1", description: "1 куриный + 1 говяжий бургер", price: 4750, priceDisplay: "4750 ₸", category: "combos", image: "images/kombo/kombodlyadvoih.png" },
       { id: 45, name: "Комбо для двоих №2", description: "Оба говяжие", price: 4850, priceDisplay: "4850 ₸", category: "combos", image: "images/kombo/kombodlyadvoih2.png" },
       { id: 46, name: "Комбо для двоих №3", description: "Оба куриные", price: 4750, priceDisplay: "4750 ₸", category: "combos", image: "images/kombo/kddd.png" },
-      { id: 47, name: "Комбо для одного куриный", description: "", price: 2500, priceDisplay: "2500 ₸", category: "combos", image: "images/kombo/chizburgerkuriny.png" },
-      { id: 48, name: "Комбо для одного говяжий", description: "", price: 2600, priceDisplay: "2600 ₸", category: "combos", image: "images/kombo/chizburgergovyazhiy.png" },
+
       { id: 49, name: "Комбо хот-дог", description: "Выберите вариант: острый / не острый", price: 2350, priceDisplay: "2350 ₸", category: "combos", image: "images/kombo/hotdogk.png", hasOptions: true, options:[
         { name: "Острый", price: 2350 },
         { name: "Не острый", price: 2350 }
