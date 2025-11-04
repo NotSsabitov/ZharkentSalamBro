@@ -778,6 +778,196 @@
   }
 }
 
+/* Обновляем навигацию - кнопки ближе к логотипу */
+.nav {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  gap: 15px; /* Добавляем отступ между элементами */
+}
+
+/* Делаем правую часть навигации более компактной */
+.nav > div {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Уменьшаем отступ между элементами */
+  flex-shrink: 0;
+}
+
+/* Кнопка заказа компактнее */
+.btn.primary {
+  padding: 10px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Аватар поменьше */
+.avatar {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Сдвигаем карточки меню правее */
+.menu-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 20px; /* Добавляем отступ слева */
+}
+
+/* Поднимаем корзину выше */
+.cart-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 100px; /* Поднимаем от низа */
+  z-index: 1000;
+  background: linear-gradient(180deg, var(--gold), #b07f3b);
+  color: #0b0b0b;
+  border-radius: 999px;
+  padding: 12px 18px;
+  box-shadow: 0 12px 44px rgba(176,127,59,0.18);
+  border: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  transition: transform .18s, box-shadow .18s;
+}
+
+.cart-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 150px; /* Соответственно поднимаем панель корзины */
+  width: 360px;
+  max-width: calc(100% - 40px);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  border: 1px solid var(--glass-border);
+  z-index: 65;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Увеличиваем отступы для отзывов и контактов */
+#reviews, #contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Увеличиваем отступы внутри секций */
+.section {
+  padding: 80px 0; /* Увеличиваем отступы сверху и снизу */
+}
+
+/* Конкретно для секции контактов добавляем больше пространства */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px; /* Увеличиваем отступ между колонками */
+  align-items: start;
+  margin-top: 30px; /* Добавляем отступ сверху */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 600px) {
+  /* Навигация на мобильных */
+  .nav {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+  
+  .nav > div {
+    gap: 8px;
+  }
+  
+  .btn.primary {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  /* Карточки меню на мобильных */
+  .menu-grid {
+    margin-left: 0;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  
+  /* Корзина на мобильных */
+  .cart-btn {
+    bottom: 90px;
+    right: 15px;
+  }
+  
+  .cart-panel {
+    bottom: 140px;
+    right: 15px;
+    width: calc(100% - 30px);
+  }
+  
+  /* Отступы секций на мобильных */
+  .section {
+    padding: 50px 0;
+  }
+  
+  #reviews, #contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 20px;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 420px) {
+  .nav {
+    padding: 10px 12px;
+  }
+  
+  .logo {
+    font-size: 16px;
+  }
+  
+  .btn.primary {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .cart-btn {
+    bottom: 80px;
+    padding: 10px 15px;
+  }
+  
+  .cart-panel {
+    bottom: 130px;
+  }
+}
+
 
 
     /* Дополнительно — мелкая оптимизация модальных окон */
@@ -1498,6 +1688,25 @@
         openStatusEl.className = 'muted small';
       }
     }
+
+    // В разделе инициализации добавь:
+function updateCartPosition() {
+  const cartBtn = document.getElementById('cartToggle');
+  const cartPanel = document.getElementById('cartPanel');
+  
+  // На мобильных устройствах поднимаем корзину выше
+  if (window.innerWidth <= 600) {
+    cartBtn.style.bottom = '90px';
+    cartPanel.style.bottom = '140px';
+  } else {
+    cartBtn.style.bottom = '100px';
+    cartPanel.style.bottom = '150px';
+  }
+}
+
+// Вызови при загрузке и изменении размера окна
+window.addEventListener('load', updateCartPosition);
+window.addEventListener('resize', updateCartPosition);
 
     /*********************
      * Event listeners
