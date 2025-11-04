@@ -476,7 +476,7 @@
       color:inherit;
     }
 
-/* === МОБИЛЬНАЯ ВЕРСИЯ (панель как на ПК, всё слева под ней) === */
+/* === МОБИЛЬНАЯ ВЕРСИЯ (панель компактнее, всё слева и видно) === */
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
@@ -487,91 +487,101 @@
     max-width: 100%;
   }
 
-  /* Верхняя панель (как на ПК) */
+  /* Верхняя панель — меньше по высоте и в линию */
   .nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
-    gap: 10px;
+    padding: 8px 0;
+    gap: 8px;
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .nav-links {
     display: flex;
-    gap: 12px;
+    gap: 10px;
   }
 
   .nav-links a {
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  .btn.primary {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 10px;
   }
 
   .avatar {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
 
-  /* Герой-блок */
+  /* Основной блок (hero) */
   .hero {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    padding: 40px 0 80px;
+    padding: 60px 0 90px;
     gap: 22px;
-    margin-top: 0;
   }
 
   .hero-left {
     width: 100%;
     max-width: 100%;
-    margin-left: 4px;
+    margin-left: 6px;
   }
 
   .hero-left h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 34px;
+    margin-bottom: 8px;
   }
 
   .tagline {
     font-size: 16px;
-    line-height: 1.5;
     color: var(--muted);
     margin-bottom: 18px;
+    line-height: 1.5;
   }
 
+  /* Кнопки под Salam Bro */
   .hero-cta {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
 
   .hero-cta .btn {
-    font-size: 15px;
-    padding: 12px 16px;
-    border-radius: 14px;
+    width: 75%;
+    max-width: 270px;
+    text-align: center;
+    font-size: 14.5px;
+    padding: 12px 0;
+    border-radius: 12px;
   }
 
-  /* Популярное сегодня */
+  /* "Популярное сегодня" */
   .hero-right {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-top: 10px;
   }
 
   .hero-right div {
-    width: 95%;
+    width: 90%;
     text-align: left;
+    margin-left: 6px;
   }
 
   .hero-right img {
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
   }
 
@@ -630,16 +640,21 @@
 
 @media (max-width: 420px) {
   .logo {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .hero-left h1 {
     font-size: 30px;
   }
 
+  .tagline {
+    font-size: 15px;
+  }
+
   .hero-cta .btn {
-    font-size: 14px;
-    padding: 10px 14px;
+    width: 80%;
+    font-size: 13.5px;
+    padding: 10px 0;
   }
 
   .menu-card .img-wrap {
@@ -649,6 +664,16 @@
   .category-btn {
     font-size: 13px;
     padding: 7px 12px;
+  }
+
+  .btn.primary {
+    font-size: 12.5px;
+    padding: 7px 12px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
   }
 }
 
