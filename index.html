@@ -476,27 +476,28 @@
       color:inherit;
     }
 
-/* === МОБИЛЬНАЯ ВЕРСИЯ — почти как на ПК, но масштабируется === */
+/* === КРАСИВАЯ МОБИЛЬНАЯ ВЕРСИЯ (всё по центру, без вылазов) === */
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
   }
 
   .container {
-    padding: 0 14px;
+    padding: 0 18px;
     max-width: 100%;
   }
 
-  /* Шапка и навигация */
+  /* Шапка */
   .nav {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 12px 0;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
   }
 
   .logo {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .nav-links {
@@ -510,82 +511,92 @@
 
   /* Hero-блок */
   .hero {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 60px 0 90px;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 0 100px;
+    gap: 26px;
   }
 
   .hero-left {
-    flex: 1 1 300px;
-    text-align: left;
+    max-width: 90%;
+    text-align: center;
   }
 
   .hero-left h1 {
-    font-size: 42px;
+    font-size: 40px;
     margin-bottom: 10px;
   }
 
   .tagline {
     font-size: 17px;
-    line-height: 1.5;
+    color: var(--muted);
     margin-bottom: 20px;
   }
 
   .hero-cta {
     display: flex;
-    flex-direction: row;
-    gap: 12px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
 
   .hero-cta .btn {
-    flex: 1 1 160px;
+    width: 80%;
+    max-width: 300px;
     font-size: 15px;
-    padding: 12px 0;
-    text-align: center;
+    padding: 13px 0;
+    border-radius: 14px;
   }
 
-  /* Правая часть */
+  /* Правая часть ("Популярное сегодня") */
   .hero-right {
-    flex: 1 1 240px;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
 
   .hero-right div {
-    max-width: 320px;
+    text-align: center;
+    width: 90%;
   }
 
-  /* Категории и карточки */
+  .hero-right img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+  }
+
+  /* Категории */
   .menu-categories {
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap;
+    padding: 0;
   }
 
   .category-btn {
     padding: 9px 16px;
     font-size: 14px;
+    border-radius: 16px;
   }
 
+  /* Карточки меню */
   .menu-grid {
     justify-content: center;
+    gap: 18px;
   }
 
   .menu-card {
-    width: 45%;
-    min-width: 160px;
-    max-width: 280px;
+    width: 100%;
+    max-width: 320px;
   }
 
   .menu-card .img-wrap {
-    height: 180px;
+    height: 200px;
   }
 
-  /* Контакты, отзывы, футер */
+  /* Контакты и отзывы */
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -593,55 +604,48 @@
 
   .reviews-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  /* Футер */
   .footer-grid {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   /* Корзина */
   .cart-btn {
-    right: 18px;
-    bottom: 18px;
-    padding: 12px 16px;
+    right: 20px;
+    bottom: 20px;
   }
 }
 
 @media (max-width: 420px) {
   .hero-left h1 {
-    font-size: 34px;
-  }
-
-  .tagline {
-    font-size: 15px;
-  }
-
-  .menu-card {
-    width: 100%;
-    max-width: 320px;
+    font-size: 32px;
   }
 
   .hero-cta .btn {
+    width: 90%;
     font-size: 14px;
-    width: 100%;
+  }
+
+  .menu-card .img-wrap {
+    height: 180px;
   }
 
   .category-btn {
     font-size: 13px;
-    padding: 8px 12px;
+    padding: 7px 12px;
   }
 
   .avatar {
     width: 44px;
     height: 44px;
   }
-
-  .hero-right div {
-    text-align: center;
-  }
 }
+
 
 
 
