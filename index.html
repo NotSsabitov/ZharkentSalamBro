@@ -476,38 +476,32 @@
       color:inherit;
     }
 
-/* === МОБИЛЬНАЯ ВЕРСИЯ — всё видно, ровно слева, под панелью === */
+/* === Финальная мобильная адаптация: всё видно под панелью === */
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
   }
 
-  .container {
-    padding: 0 14px;
-    max-width: 100%;
-  }
-
-  /* Панель */
+  /* Панель оставляем, но фиксируем высоту */
   .site-header {
-    min-height: auto;
-    background-attachment: scroll;
-    padding-bottom: 0;
+    position: relative; /* убираем fixed, если есть */
+    z-index: 5;
   }
 
   .nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 8px 12px;
   }
 
   .logo {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .nav-links {
     display: flex;
-    gap: 10px;
+    gap: 8px;
   }
 
   .nav-links a {
@@ -515,30 +509,30 @@
   }
 
   .btn.primary {
+    padding: 8px 12px;
     font-size: 13px;
-    padding: 8px 14px;
   }
 
   .avatar {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
-  /* --- HERO --- */
+  /* --- Основной блок --- */
   .hero {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    margin-top: 80px; /* опускаем блок ниже панели */
-    padding-bottom: 100px;
+    margin-top: 120px; /* поднимаем ниже панели */
+    padding: 20px 0 100px;
     gap: 24px;
   }
 
   .hero-left {
     width: 100%;
     margin-left: 0;
-    padding-left: 6px;
+    padding-left: 8px;
   }
 
   .hero-left h1 {
@@ -548,16 +542,15 @@
 
   .tagline {
     font-size: 16px;
-    line-height: 1.5;
     color: var(--muted);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .hero-cta {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
+    align-items: flex-start;
   }
 
   .hero-cta .btn {
@@ -574,13 +567,13 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-top: 10px;
+    margin-top: 14px;
   }
 
   .hero-right div {
-    width: 95%;
+    width: 90%;
     text-align: left;
-    margin-left: 6px;
+    margin-left: 8px;
   }
 
   .hero-right img {
@@ -588,59 +581,25 @@
     height: 70px;
     border-radius: 10px;
   }
-
-  /* Остальное */
-  .menu-categories {
-    justify-content: flex-start;
-    gap: 8px;
-    padding-left: 4px;
-  }
-
-  .menu-grid {
-    justify-content: flex-start;
-    gap: 16px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .footer-grid {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .cart-btn {
-    right: 18px;
-    bottom: 18px;
-    padding: 12px 16px;
-  }
 }
 
 @media (max-width: 420px) {
   .hero {
-    margin-top: 90px;
+    margin-top: 130px; /* чуть ниже для очень маленьких экранов */
   }
 
   .hero-left h1 {
     font-size: 30px;
   }
 
+  .tagline {
+    font-size: 15px;
+  }
+
   .hero-cta .btn {
     width: 85%;
     font-size: 14px;
     padding: 10px 0;
-  }
-
-  .tagline {
-    font-size: 15px;
   }
 
   .btn.primary {
