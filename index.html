@@ -481,19 +481,23 @@
     overflow-x: hidden;
   }
 
-  /* Панель навигации */
+  /* Панель навигации - фиксированная сверху */
   .site-header {
     position: relative;
-    z-index: 5;
-    min-height: 100vh; /* Занимает всю высоту экрана */
+    min-height: 100vh;
+    padding-top: 70px; /* Место для фиксированной навигации */
   }
 
   .nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(15, 17, 19, 0.95);
+    backdrop-filter: blur(10px);
     padding: 12px 15px;
-    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
 
   .logo {
@@ -501,7 +505,7 @@
   }
 
   .nav-links {
-    display: none; /* Скрываем навигацию на мобильных */
+    display: none;
   }
 
   .btn.primary {
@@ -510,46 +514,48 @@
   }
 
   .avatar {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
-  /* Основной контент героя */
+  /* Основной контент - начинается сразу под панелью */
   .hero {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px 60px;
-    gap: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 20px 0 40px;
+    gap: 25px;
     margin-top: 0;
     width: 100%;
   }
 
   .hero-left {
-    max-width: 100%;
     width: 100%;
-    padding: 0 15px;
+    max-width: 100%;
+    padding: 0;
   }
 
   .hero-left h1 {
-    font-size: 36px;
-    margin-bottom: 12px;
-    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.2;
   }
 
   .tagline {
     font-size: 16px;
     color: var(--muted);
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
+    line-height: 1.4;
   }
 
   .hero-cta {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
   }
 
@@ -557,7 +563,7 @@
     width: 100%;
     max-width: 280px;
     font-size: 15px;
-    padding: 14px 0;
+    padding: 14px 20px;
     border-radius: 12px;
     text-align: center;
     justify-content: center;
@@ -567,15 +573,14 @@
   .hero-right {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: flex-start;
+    margin-top: 10px;
   }
 
   .hero-right > div {
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    margin: 0;
   }
 
   .hero-right img {
@@ -583,15 +588,34 @@
     height: 70px;
     border-radius: 10px;
   }
+
+  /* Статус в навигации */
+  .muted.small {
+    font-size: 11px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
 }
 
 @media (max-width: 420px) {
+  .site-header {
+    padding-top: 65px;
+  }
+
+  .nav {
+    padding: 10px 12px;
+  }
+
   .hero {
-    padding: 30px 15px 50px;
+    padding: 15px 0 30px;
+    gap: 20px;
   }
 
   .hero-left h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .tagline {
@@ -600,7 +624,8 @@
 
   .hero-cta .btn {
     font-size: 14px;
-    padding: 12px 0;
+    padding: 12px 18px;
+    max-width: 260px;
   }
 
   .btn.primary {
@@ -609,12 +634,13 @@
   }
 
   .avatar {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
-  .nav {
-    padding: 10px 12px;
+  .hero-right img {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -625,10 +651,14 @@
   }
   
   .section {
-    padding: 50px 0;
+    padding: 40px 0;
+  }
+  
+  /* Убедимся, что контент не скрывается под панелью */
+  #menu, #reviews, #contact {
+    scroll-margin-top: 70px;
   }
 }
-
 
 
 
