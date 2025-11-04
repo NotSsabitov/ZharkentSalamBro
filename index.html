@@ -476,7 +476,7 @@
       color:inherit;
     }
 
-/* === МОБИЛЬНАЯ ВЕРСИЯ (панель компактнее, всё слева и видно) === */
+/* === МОБИЛЬНАЯ ВЕРСИЯ (всё видно, аккуратно слева) === */
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
@@ -487,17 +487,23 @@
     max-width: 100%;
   }
 
-  /* Верхняя панель — меньше по высоте и в линию */
+  /* Шапка — как на ПК, но ниже и компактнее */
+  .site-header {
+    min-height: auto;
+    background-attachment: scroll;
+    padding-bottom: 30px;
+  }
+
   .nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 0;
     gap: 8px;
+    padding: 8px 0;
   }
 
   .logo {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .nav-links {
@@ -510,30 +516,29 @@
   }
 
   .btn.primary {
-    padding: 8px 14px;
     font-size: 13px;
-    border-radius: 10px;
+    padding: 8px 14px;
   }
 
   .avatar {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
   }
 
-  /* Основной блок (hero) */
+  /* Блок hero */
   .hero {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     text-align: left;
-    padding: 60px 0 90px;
+    padding: 40px 0 60px;
     gap: 22px;
   }
 
   .hero-left {
     width: 100%;
-    max-width: 100%;
-    margin-left: 6px;
+    margin-top: 0;
   }
 
   .hero-left h1 {
@@ -544,11 +549,9 @@
   .tagline {
     font-size: 16px;
     color: var(--muted);
-    margin-bottom: 18px;
-    line-height: 1.5;
+    margin-bottom: 16px;
   }
 
-  /* Кнопки под Salam Bro */
   .hero-cta {
     display: flex;
     flex-direction: column;
@@ -557,26 +560,25 @@
   }
 
   .hero-cta .btn {
-    width: 75%;
-    max-width: 270px;
+    width: 80%;
+    max-width: 280px;
     text-align: center;
     font-size: 14.5px;
     padding: 12px 0;
     border-radius: 12px;
   }
 
-  /* "Популярное сегодня" */
+  /* Популярное сегодня */
   .hero-right {
     width: 100%;
+    margin-top: 10px;
     display: flex;
     justify-content: flex-start;
-    margin-top: 10px;
   }
 
   .hero-right div {
-    width: 90%;
+    width: 92%;
     text-align: left;
-    margin-left: 6px;
   }
 
   .hero-right img {
@@ -652,18 +654,9 @@
   }
 
   .hero-cta .btn {
-    width: 80%;
-    font-size: 13.5px;
+    width: 85%;
+    font-size: 14px;
     padding: 10px 0;
-  }
-
-  .menu-card .img-wrap {
-    height: 180px;
-  }
-
-  .category-btn {
-    font-size: 13px;
-    padding: 7px 12px;
   }
 
   .btn.primary {
@@ -672,8 +665,8 @@
   }
 
   .avatar {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 }
 
