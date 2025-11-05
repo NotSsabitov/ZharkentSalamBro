@@ -70,6 +70,7 @@
       align-items:center;
       justify-content:space-between;
       padding:18px 0;
+      gap: 15px;
     }
     .logo{
       font-weight:700;
@@ -117,6 +118,9 @@
       background: linear-gradient(180deg, #e6cf99, #c69c54);
       color: #0b0b0b;
       box-shadow: var(--btn-glow);
+      padding: 10px 16px;
+      font-size: 14px;
+      white-space: nowrap;
     }
     .btn.small{ padding:8px 12px; font-size:13px; border-radius:10px; }
 
@@ -126,8 +130,8 @@
     }
 
     .avatar{
-      width:54px;
-      height:54px;
+      width:44px;
+      height:44px;
       object-fit:cover;
       border-radius:50%;
       border:2px solid rgba(255,255,255,0.06);
@@ -164,7 +168,7 @@
     .tagline{ color:var(--muted); margin-bottom:18px; font-size:18px; }
 
     /* sections */
-    .section{ padding:72px 0; }
+    .section{ padding:80px 0; }
     .section-title{ font-size:28px; margin:0 0 6px; }
     .section-sub{ color:var(--muted); margin:6px 0 24px; }
 
@@ -175,6 +179,7 @@
       flex-wrap:wrap;
       align-items:flex-start;
       justify-content:flex-start;
+      margin-left: 20px;
     }
 
     .menu-card{
@@ -258,8 +263,9 @@
     .contact-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:40px;
+      gap:50px;
       align-items:start;
+      margin-top: 30px;
     }
     .contact-info{
       background: var(--card);
@@ -390,7 +396,7 @@
     .cart-btn {
       position: fixed;
       right: 20px;
-      bottom: 20px;
+      bottom: 100px;
       z-index: 60;
       background: linear-gradient(180deg, var(--gold), #b07f3b);
       color: #0b0b0b;
@@ -416,7 +422,7 @@
     .cart-panel {
       position: fixed;
       right: 20px;
-      bottom: 80px;
+      bottom: 150px;
       width: 360px;
       max-width: calc(100% - 40px);
       background: var(--card);
@@ -476,6 +482,19 @@
       color:inherit;
     }
 
+    /* Увеличиваем отступы для отзывов и контактов */
+    #reviews, #contact {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .nav > div {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-shrink:0;
+    }
+
 @media (max-width: 600px) {
   body {
     overflow-x: hidden;
@@ -496,12 +515,12 @@
     z-index: 100;
     background: rgba(15, 17, 19, 0.98);
     backdrop-filter: blur(10px);
-    padding: 10px 12px;
+    padding: 12px 15px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 10px;
   }
 
   .logo {
@@ -523,14 +542,14 @@
   }
 
   .btn.primary {
-    padding: 7px 10px;
+    padding: 8px 12px;
     font-size: 12px;
     white-space: nowrap;
   }
 
   .avatar {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
   }
 
@@ -620,7 +639,8 @@
   .menu-grid {
     justify-content: center;
     gap: 15px;
-    padding: 0 5px;
+    padding: 0 10px;
+    margin-left: 0;
   }
 
   .menu-card {
@@ -636,8 +656,9 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
     padding: 0 5px;
+    margin-top: 20px;
   }
 
   .contact-info, .order-form {
@@ -646,7 +667,7 @@
 
   /* Корзина - поднимаем выше */
   .cart-btn {
-    bottom: 80px;
+    bottom: 90px;
     right: 15px;
     z-index: 1000;
   }
@@ -657,6 +678,16 @@
     width: calc(100% - 30px);
     max-width: none;
   }
+
+  /* Отступы секций на мобильных */
+  .section {
+    padding: 50px 0;
+  }
+
+  #reviews, #contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -665,7 +696,7 @@
   }
 
   .nav {
-    padding: 8px 10px;
+    padding: 10px 12px;
   }
 
   .logo {
@@ -673,13 +704,13 @@
   }
 
   .btn.primary {
-    padding: 6px 8px;
+    padding: 7px 10px;
     font-size: 11px;
   }
 
   .avatar {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 
   .hero {
@@ -714,16 +745,21 @@
   .muted.small {
     font-size: 9px;
   }
+
+  .cart-btn {
+    bottom: 80px;
+    padding: 10px 15px;
+  }
+
+  .cart-panel {
+    bottom: 130px;
+  }
 }
 
 /* Исправляем контейнер для всего контента */
 @media (max-width: 600px) {
   .container {
     padding: 0 12px;
-  }
-  
-  .section {
-    padding: 30px 0;
   }
   
   #menu, #reviews, #contact {
@@ -746,229 +782,6 @@
     gap: 15px;
   }
 }
-
-/* Фиксируем корзину чтобы всегда была видна */
-.cart-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 80px; /* Подняли выше от самого низа */
-  z-index: 1000;
-  background: linear-gradient(180deg, var(--gold), #b07f3b);
-  color: #0b0b0b;
-  border-radius: 999px;
-  padding: 12px 18px;
-  box-shadow: 0 12px 44px rgba(176,127,59,0.18);
-  border: none;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-  transition: transform .18s, box-shadow .18s;
-}
-
-@media (max-width: 600px) {
-  .cart-btn {
-    bottom: 70px;
-    right: 15px;
-    padding: 10px 15px;
-  }
-  
-  .cart-panel {
-    bottom: 130px;
-  }
-}
-
-/* Обновляем навигацию - кнопки ближе к логотипу */
-.nav {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-  gap: 15px; /* Добавляем отступ между элементами */
-}
-
-/* Делаем правую часть навигации более компактной */
-.nav > div {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Уменьшаем отступ между элементами */
-  flex-shrink: 0;
-}
-
-/* Кнопка заказа компактнее */
-.btn.primary {
-  padding: 10px 16px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-/* Аватар поменьше */
-.avatar {
-  width: 44px;
-  height: 44px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.06);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-}
-
-/* Сдвигаем карточки меню правее */
-.menu-grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-left: 20px; /* Добавляем отступ слева */
-}
-
-/* Поднимаем корзину выше */
-.cart-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 100px; /* Поднимаем от низа */
-  z-index: 1000;
-  background: linear-gradient(180deg, var(--gold), #b07f3b);
-  color: #0b0b0b;
-  border-radius: 999px;
-  padding: 12px 18px;
-  box-shadow: 0 12px 44px rgba(176,127,59,0.18);
-  border: none;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-  transition: transform .18s, box-shadow .18s;
-}
-
-.cart-panel {
-  position: fixed;
-  right: 20px;
-  bottom: 150px; /* Соответственно поднимаем панель корзины */
-  width: 360px;
-  max-width: calc(100% - 40px);
-  background: var(--card);
-  border-radius: 12px;
-  padding: 14px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  border: 1px solid var(--glass-border);
-  z-index: 65;
-  display: none;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Увеличиваем отступы для отзывов и контактов */
-#reviews, #contact {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-/* Увеличиваем отступы внутри секций */
-.section {
-  padding: 80px 0; /* Увеличиваем отступы сверху и снизу */
-}
-
-/* Конкретно для секции контактов добавляем больше пространства */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px; /* Увеличиваем отступ между колонками */
-  align-items: start;
-  margin-top: 30px; /* Добавляем отступ сверху */
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 600px) {
-  /* Навигация на мобильных */
-  .nav {
-    padding: 12px 15px;
-    gap: 10px;
-  }
-  
-  .nav > div {
-    gap: 8px;
-  }
-  
-  .btn.primary {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-  
-  .avatar {
-    width: 36px;
-    height: 36px;
-  }
-  
-  /* Карточки меню на мобильных */
-  .menu-grid {
-    margin-left: 0;
-    justify-content: center;
-    padding: 0 10px;
-  }
-  
-  /* Корзина на мобильных */
-  .cart-btn {
-    bottom: 90px;
-    right: 15px;
-  }
-  
-  .cart-panel {
-    bottom: 140px;
-    right: 15px;
-    width: calc(100% - 30px);
-  }
-  
-  /* Отступы секций на мобильных */
-  .section {
-    padding: 50px 0;
-  }
-  
-  #reviews, #contact {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-  
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 20px;
-  }
-}
-
-/* Для очень маленьких экранов */
-@media (max-width: 420px) {
-  .nav {
-    padding: 10px 12px;
-  }
-  
-  .logo {
-    font-size: 16px;
-  }
-  
-  .btn.primary {
-    padding: 7px 10px;
-    font-size: 11px;
-  }
-  
-  .avatar {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .cart-btn {
-    bottom: 80px;
-    padding: 10px 15px;
-  }
-  
-  .cart-panel {
-    bottom: 130px;
-  }
-}
-
-
 
     /* Дополнительно — мелкая оптимизация модальных окон */
     .modal-backdrop.open {
@@ -1006,7 +819,7 @@
         <li><a href="#contact">Контакты</a></li>
       </ul>
 
-      <div style="display:flex;gap:12px;align-items:center;">
+      <div style="display:flex;gap:10px;align-items:center;">
         <div class="muted small" id="openStatus">Статус: <span class="badge" id="statusBadge">—</span></div>
         <button class="btn primary" id="orderTopBtn">Заказать</button>
         <img src="images/avatar.jpeg" alt="Salam Bro avatar" class="avatar">
@@ -1071,7 +884,7 @@
       </div>
 
       <div class="review-card reveal">
-        <p>"Очень вкусные нагетсы и сырные палочки. Детям нравится, сами тоже не можем удержаться!"</p>
+        <p>"Очень вкусные наггетсы и сырные палочки. Детям нравится, сами тоже не можем удержаться!"</p>
         <div class="review-meta">— Мария Ким</div>
       </div>
 
@@ -1145,7 +958,7 @@
 
           <div>
             <label>Ваш заказ (или комментарии)</label>
-            <textarea id="inputOrder" name="order" placeholder="Например: Чизбургер меню, нагетсы 6шт, кола 0.5л"></textarea>
+            <textarea id="inputOrder" name="order" placeholder="Например: Чизбургер меню, наггетсы 6шт, кола 0.5л"></textarea>
           </div>
 
           <button class="btn primary" type="submit" style="width:100%;">
@@ -1237,7 +1050,7 @@
      *********************/
     const menuItems = [
       // Бургеры
-      { id: 1, name: "Халыкбургер", description: "Выберите тип мяса", price: 1200, priceDisplay: "1200 ₸", category: "burgers", image: "images/burger/hb.png", hasOptions: true, options: [
+      { id: 1, name: "Халыкбургер", description: "Выберите тип мяса", price: 1200, priceDisplay: "1200 ₸", category: "burgers", image: "images/burger/hb.jpg", hasOptions: true, options: [
         { name: "Куриный", price: 1200 },
         { name: "Говяжий", price: 1200 }
       ]},
@@ -1284,7 +1097,7 @@
         { name: "5 шт", price: 1490 },
         { name: "7 шт", price: 1790 }
       ]},
-      { id: 16, name: "Нагетсы", description: "Выберите количество", price: 1240, priceDisplay: "1240 ₸", category: "snacks", image: "images/zakuski/nagetsi.png", hasOptions: true, options: [
+      { id: 16, name: "Наггетсы", description: "Выберите количество", price: 1240, priceDisplay: "1240 ₸", category: "snacks", image: "images/zakuski/nagetsi.png", hasOptions: true, options: [
         { name: "6 шт", price: 1240 },
         { name: "9 шт", price: 1690 },
         { name: "20 шт", price: 2990 }
@@ -1689,25 +1502,6 @@
       }
     }
 
-    // В разделе инициализации добавь:
-function updateCartPosition() {
-  const cartBtn = document.getElementById('cartToggle');
-  const cartPanel = document.getElementById('cartPanel');
-  
-  // На мобильных устройствах поднимаем корзину выше
-  if (window.innerWidth <= 600) {
-    cartBtn.style.bottom = '90px';
-    cartPanel.style.bottom = '140px';
-  } else {
-    cartBtn.style.bottom = '100px';
-    cartPanel.style.bottom = '150px';
-  }
-}
-
-// Вызови при загрузке и изменении размера окна
-window.addEventListener('load', updateCartPosition);
-window.addEventListener('resize', updateCartPosition);
-
     /*********************
      * Event listeners
      *********************/
@@ -1789,6 +1583,28 @@ window.addEventListener('resize', updateCartPosition);
 
     // Update open status every minute
     setInterval(updateOpenStatus, 60000);
+
+    // Функция для обновления позиции корзины
+    function updateCartPosition() {
+      const cartBtn = document.getElementById('cartToggle');
+      const cartPanel = document.getElementById('cartPanel');
+      
+      // На мобильных устройствах поднимаем корзину выше
+      if (window.innerWidth <= 600) {
+        cartBtn.style.bottom = '90px';
+        cartPanel.style.bottom = '140px';
+      } else {
+        cartBtn.style.bottom = '100px';
+        cartPanel.style.bottom = '150px';
+      }
+    }
+
+    // Вызови при загрузке и изменении размера окна
+    window.addEventListener('load', updateCartPosition);
+    window.addEventListener('resize', updateCartPosition);
+
+    // Инициализируем при загрузке
+    updateCartPosition();
   </script>
 </body>
 </html>
